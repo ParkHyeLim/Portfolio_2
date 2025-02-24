@@ -20,7 +20,7 @@
     .backgroundImage {
         width: 100%;
         height: 100%;
-        z-index: 0;
+        z-index: -2;
     }
 
     .backgroundOverlay {
@@ -28,20 +28,44 @@
         width: 100%;
         height: 100%;
         background-color: #fff7e8d7;
-        z-index: 1;
+        z-index: -1;
     }
 }
 
 .webcam {
-    position: relative;
-    bottom: 50%;
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 100%;
-    height: 100%;
+    width: 80%;
+}
 
-    z-index: 10;
+.textBox {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 80%;
+
+    .title {
+        text-align: center;
+        font-family: 'ghanachoco';
+        font-size: 4vh;
+        margin-bottom: 2vh;
+    }
+
+    .text {
+        font-family: 'RIDIBatang';
+        font-size: 2.5vh;
+        text-align: center;
+        line-height: 5vh;
+    }
 }
 
 .captureButton {

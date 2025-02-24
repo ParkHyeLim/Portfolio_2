@@ -22,9 +22,14 @@ const Location1Page1 = () => {
     return (
         <div className={styles.PageContainer}>
             <div className={styles.contentsContainer}>
-
                 <img className={styles.backgroundImage} src={backgroundImg} alt="backgroundImg" />
                 <div className={styles.backgroundOverlay}></div>
+
+                <div className={styles.textBox}>
+                    <p className={styles.title}>챕터 1</p>
+
+                    <div className={styles.text}>배재학당의 모습을 촬영해보자!</div>
+                </div>
 
                 {/* 카메라 화면 */}
                 <Webcam
