@@ -1,7 +1,21 @@
 .cameraContainer {
-    width: 100vw;  /* 전체 화면 너비 */
-    height: 100vh; /* 전체 화면 높이 */
+    width: 100vw;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.captureButton {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
