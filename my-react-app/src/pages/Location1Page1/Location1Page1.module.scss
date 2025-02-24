@@ -16,7 +16,6 @@
     height: 100%;
     aspect-ratio: 11 / 16;
 
-
     .backgroundImage {
         width: 100%;
         height: 100%;
@@ -32,26 +31,16 @@
     }
 }
 
-.webcam {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    width: 80%;
-}
-
 .textBox {
     position: absolute;
-    top: 5%;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
     width: 80%;
+    z-index: 10;
 
     .title {
         text-align: center;
@@ -60,34 +49,78 @@
         margin-bottom: 2vh;
     }
 
-    .text {
-        font-family: 'RIDIBatang';
-        font-size: 2.5vh;
-        text-align: center;
-        line-height: 5vh;
+    .quizBox {
+
+        .question {
+            padding-left: 2vh;
+            font-size: 2.2vh;
+            font-weight: bold;
+        }
+
+        .answer,
+        .selectAnswer {
+            margin: 0.2vh 0 2vh 0;
+            padding: 0 0 0 2vh;
+            font-size: 2vh;
+
+            cursor: pointer;
+        }
+
+        .selectAnswer {
+            color: #FF0000;
+            font-weight: bold;
+        }
     }
 }
 
-.captureButton {
+
+.btnBox {
     position: absolute;
     bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
 
-    padding: 1vh 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
 
-    background-color: #ffe8bd;
-    border-radius: 1.2vh;
+    margin: 5vh 0 0 0;
 
-    font-family: 'ghanachoco';
-    font-size: 2vh;
-    border: none;
-
-    cursor: pointer;
-
-    z-index: 10;
-
-    &:hover {
-        border: 2.5px solid #5e410b;
+    .checkText {
+        padding: 0 0.2vh 0.3vh 0.2vh;
+        background-color: #fef0d7c3;
+        color: #FF0000;
+        font-size: 1.8vh;
     }
+
+    button {
+        background-color: #ffe8bd;
+        border-radius: 1.2vh;
+
+        font-family: 'ghanachoco';
+        font-size: 2vh;
+        border: none;
+
+        cursor: pointer;
+
+        &:hover {
+            border: 2.5px solid #5e410b;
+        }
+    }
+}
+
+@font-face {
+    font-family: 'ghanachoco';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RIDIBatang';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
