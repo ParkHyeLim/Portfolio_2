@@ -1,66 +1,44 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import Webcam from "react-webcam";
 import styles from "./Location1Page1.module.scss";
+import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
 const Location1Page1 = () => {
     const navigate = useNavigate();
-    const sceneRef = useRef(null);
+    const webcamRef = useRef(null);
 
-    useEffect(() => {
-        // 📌 A-Frame & AR.js 로드
-        const script = document.createElement("script");
-        script.src = "https://aframe.io/releases/1.2.0/aframe.min.js";
-        script.async = true;
-        document.body.appendChild(script);
+    // 📸 사진 촬영 함수
+    const capturePhoto = useCallback(() => {
+        if (webcamRef.current) {
+            const imageSrc = webcamRef.current.getScreenshot(); // 사진 캡처
+            console.log("Captured Image:", imageSrc); // 캡처된 이미지 확인
 
-        const arScript = document.createElement("script");
-        arScript.src = "https://cdn.rawgit.com/jeromeetienne/ar.js/1.7.2/aframe/build/aframe-ar.min.js";
-        arScript.async = true;
-        document.body.appendChild(arScript);
-
-        // ✅ Cleanup: 페이지 이동 시 A-Frame 제거
-        return () => {
-            document.body.removeChild(script);
-            document.body.removeChild(arScript);
-            if (sceneRef.current) {
-                sceneRef.current.parentNode.removeChild(sceneRef.current);
-            }
-        };
-    }, []);
-
-    // 📸 **사진 촬영 후 이동하는 함수**
-    const capturePhoto = () => {
-        const scene = sceneRef.current;
-        if (!scene) return;
-
-        const canvas = scene.canvas;
-        if (!canvas) return;
-
-        const imageData = canvas.toDataURL("image/png"); // 이미지 데이터 생성
-        console.log("Captured Image:", imageData); // 확인용 콘솔 출력
-
-        // ✅ A-Frame 강제 종료 후 페이지 이동
-        if (sceneRef.current) {
-            sceneRef.current.parentNode.removeChild(sceneRef.current);
+            // 📌 페이지 이동
+            navigate("/location1/page2");
         }
-        
-        navigate("/location1/page2");
-    };
+    }, [navigate]);
 
     return (
-        <div className={styles.cameraContainer}>
-            {/* AR 카메라 */}
-            <a-scene embedded arjs ref={sceneRef}>
-                <a-marker preset="hiro">
-                    <a-box position="0 0.5 0" material="color: red;"></a-box>
-                </a-marker>
-                <a-entity camera></a-entity>
-            </a-scene>
+        <div className={styles.PageContainer}>
+            <div className={styles.contentsContainer}>
 
-            {/* 📸 촬영 버튼 */}
-            <button className={styles.captureButton} onClick={capturePhoto}>
-                📷 사진 촬영
-            </button>
+                <img className={styles.backgroundImage} src={backgroundImg} alt="backgroundImg" />
+                <div className={styles.backgroundOverlay}></div>
+
+                {/* 카메라 화면 */}
+                <Webcam
+                    className={styles.webcam}
+                    ref={webcamRef}
+                    screenshotFormat="image/png"
+                    videoConstraints={{ facingMode: "environment" }} // 후면 카메라 사용
+                />
+
+                {/* 📸 촬영 버튼 */}
+                <button className={styles.captureButton} onClick={capturePhoto}>
+                    사진 촬영
+                </button>
+            </div>
         </div>
     );
 };
