@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Location1Page1.module.scss";
-import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
 const Location1Page1 = () => {
+    const navigate = useNavigate();
+    const sceneRef = useRef(null);
 
     useEffect(() => {
+        // A-Frame & AR.js 로드
         const script = document.createElement("script");
         script.src = "https://aframe.io/releases/1.2.0/aframe.min.js";
         script.async = true;
@@ -17,15 +19,35 @@ const Location1Page1 = () => {
         document.body.appendChild(arScript);
     }, []);
 
+    // 📸 **사진 촬영 후 이동하는 함수**
+    const capturePhoto = () => {
+        const scene = sceneRef.current;
+        if (!scene) return;
+
+        const canvas = scene.canvas;
+        if (!canvas) return;
+
+        const imageData = canvas.toDataURL("image/png"); // 이미지 데이터 생성
+        console.log("Captured Image:", imageData); // 확인용 콘솔 출력
+
+        // 페이지 이동
+        navigate("/location1/page2");
+    };
+
     return (
-        <div className={styles.cameraConainer}>
-            <a-scene embedded arjs>
-                {/* AR 마커가 감지되면 보이는 오브젝트 */}
+        <div className={styles.cameraContainer}>
+            {/* AR 카메라 */}
+            <a-scene embedded arjs ref={sceneRef}>
                 <a-marker preset="hiro">
                     <a-box position="0 0.5 0" material="color: red;"></a-box>
                 </a-marker>
                 <a-entity camera></a-entity>
             </a-scene>
+
+            {/* 📸 촬영 버튼 */}
+            <button className={styles.captureButton} onClick={capturePhoto}>
+                📷 사진 촬영
+            </button>
         </div>
     );
 };
