@@ -2693,6 +2693,7 @@ __metadata:
     react: ^19.0.0
     react-dom: ^19.0.0
     react-icon: ^1.0.0
+    react-icons: ^5.5.0
     react-router-dom: ^7.2.0
     scss: ^0.2.4
     vite: ^6.1.0
@@ -3019,6 +3020,15 @@ __metadata:
     babel-runtime: ^5.3.3
     react: ">=0.12.0"
   checksum: 3c36c9a2ad076e480c352ba4e4006aba3ff7d57f2597ae6daad5becc18d9ceabe098234ddef6fcd1c9886cf751059ff487e49ec6ecdf7bc8bdac6a0deec4d033
+  languageName: node
+  linkType: hard
+
+"react-icons@npm:^5.5.0":
+  version: 5.5.0
+  resolution: "react-icons@npm:5.5.0"
+  peerDependencies:
+    react: "*"
+  checksum: cbd74f4b7982e6e18d59798a6b578268c8eb0909d78d87bcf9b25f99b3e544fd189a76551cb5e770d17f154a60b668551aee108aaf8471309b23f7af3b2c5b07
   languageName: node
   linkType: hard
 
