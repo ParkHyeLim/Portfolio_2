@@ -10,10 +10,11 @@ import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
 const Page2 = () => {
     const navigate = useNavigate();
-    const [timeCount, setTimeCount] = useState(5);
+    const [timeCount, setTimeCount] = useState(3);
 
     const handleNavigater = () => {
-        navigate("page3");
+        
+        navigate("../page3");
     }
 
     useEffect(() => {

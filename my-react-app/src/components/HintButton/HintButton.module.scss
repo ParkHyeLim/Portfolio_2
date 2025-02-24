@@ -1,0 +1,55 @@
+.hintContainer{
+    z-index: 10;    
+}
+
+.hintBtn{
+    position: fixed;
+    top: 2vh;
+    right: 2vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 5vh;
+    height: 5vh;
+
+    border-radius: 50%;
+    background-color: #FFFFFF;
+
+    &:hover {
+        background-color: #f3e4c5;
+    }
+}
+
+.hintBox{
+    position: fixed;
+    top: 8vh;
+    right: 2vh;
+
+    width: 30vh;
+    padding: 1.1vh 2vh 1.5vh 2vh;
+
+    background-color: #fffbf2;
+    border-radius: 1vh;
+    border: 0.2px solid #2b1f02;
+
+    font-family: "RIDIBatang";
+    font-size: 1.5vh;
+
+    
+}
+
+@font-face {
+    font-family: 'ghanachoco';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RIDIBatang';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
