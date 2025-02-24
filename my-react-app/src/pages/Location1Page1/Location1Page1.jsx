@@ -7,7 +7,7 @@ const Location1Page1 = () => {
     const sceneRef = useRef(null);
 
     useEffect(() => {
-        // A-Frame & AR.js 로드
+        // 📌 A-Frame & AR.js 로드
         const script = document.createElement("script");
         script.src = "https://aframe.io/releases/1.2.0/aframe.min.js";
         script.async = true;
@@ -17,6 +17,15 @@ const Location1Page1 = () => {
         arScript.src = "https://cdn.rawgit.com/jeromeetienne/ar.js/1.7.2/aframe/build/aframe-ar.min.js";
         arScript.async = true;
         document.body.appendChild(arScript);
+
+        // ✅ Cleanup: 페이지 이동 시 A-Frame 제거
+        return () => {
+            document.body.removeChild(script);
+            document.body.removeChild(arScript);
+            if (sceneRef.current) {
+                sceneRef.current.parentNode.removeChild(sceneRef.current);
+            }
+        };
     }, []);
 
     // 📸 **사진 촬영 후 이동하는 함수**
@@ -30,7 +39,11 @@ const Location1Page1 = () => {
         const imageData = canvas.toDataURL("image/png"); // 이미지 데이터 생성
         console.log("Captured Image:", imageData); // 확인용 콘솔 출력
 
-        // 페이지 이동
+        // ✅ A-Frame 강제 종료 후 페이지 이동
+        if (sceneRef.current) {
+            sceneRef.current.parentNode.removeChild(sceneRef.current);
+        }
+        
         navigate("/location1/page2");
     };
 
