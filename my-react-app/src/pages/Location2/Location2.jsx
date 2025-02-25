@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./Location1Page2.module.scss";
+import styles from "./Location2.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
 const messages = [
-    "잘 찾았군.",
-    "하지만 여기서 끝이 아니다.",
+    "이곳에 도착했군.",
+    "대한제국이 무너져갈 때, 우리는 이곳을 주시했다.",
+    "누군가는 이곳을 피난처로 삼았고,",
+    "누군가는 여기에 조선의 운명을 걸었다.",
     "\u00A0",
-    "우리는 단순히 신앙을 위해 모인 것이 아니었다.",
-    "이곳에서 함께 꿈꾼 것은 조선의 독립이었다.",
+    "하지만 우리의 존재를 숨겨야 했기에,",
+    "암호 없이 안으로 들어갈 수는 없었다.",
     "\u00A0",
-    "다음 장소는 구 러시아 공사관.",
-    "우리 단체의 중요한 암호가 그곳에 남아 있다.",
-    "그 암호를 풀어야만, 진정한 길을 찾을 수 있을 것이다.",
+    "이제 네가 그 암호를 풀 차례다."
 ];
 
-const Location1Page2 = () => {
+
+const Location2 = () => {
     const navigate = useNavigate();
     const [visibleCount, setVisibleCount] = useState(0);
 
@@ -35,7 +36,7 @@ const Location1Page2 = () => {
                 <div className={styles.backgroundOverlay}></div>
 
                 <div className={styles.textBox}>
-                    <p className={styles.title}>챕터 1</p>
+                    <p className={styles.title}>챕터 2</p>
 
                     <div className={styles.textContainer}>
                         {messages.slice(0, visibleCount).map((text, index) => (
@@ -46,8 +47,8 @@ const Location1Page2 = () => {
 
                 {visibleCount === messages.length && (
                     <div className={styles.btnBox}>
-                        <button onClick={() => navigate("../location2")}>
-                            찾아야 하는 물건은?
+                        <button onClick={() => navigate("./page1")}>
+                            단서 찾기
                         </button>
                     </div>
                 )}
@@ -56,4 +57,4 @@ const Location1Page2 = () => {
     );
 };
 
-export default Location1Page2;
+export default Location2;

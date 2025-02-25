@@ -16,6 +16,7 @@
     height: 100%;
     aspect-ratio: 11 / 16;
 
+
     .backgroundImage {
         width: 100%;
         height: 100%;
@@ -31,45 +32,62 @@
     }
 }
 
+.webcam {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 50%;
+}
+
 .textBox {
     position: absolute;
-    top: 10%;
     left: 50%;
     transform: translateX(-50%);
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
     width: 80%;
-    z-index: 10;
+    height: 100%;
 
     .title {
+        margin: 5vh;
         text-align: center;
         font-family: 'ghanachoco';
         font-size: 4vh;
         margin-bottom: 2vh;
     }
 
-    .quizBox {
+    .text {
+        margin: 10vh 0 0 0;
 
-        .question {
-            padding-left: 2vh;
-            font-size: 2.2vh;
-            font-weight: bold;
-        }
+        font-family: 'RIDIBatang';
+        font-size: 2.5vh;
+        text-align: center;
+        line-height: 5vh;
+    }
 
-        .answer,
-        .selectAnswer {
-            margin: 0.2vh 0 2vh 0;
-            padding: 0 0 0 2vh;
-            font-size: 2vh;
+    input {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        padding: 1.5vh 0;
+        width: 50vh;
 
-            cursor: pointer;
-        }
+        border: 1px solid #5e410b;
+        border-radius: 1vh;
 
-        .selectAnswer {
-            color: #FF0000;
-            font-weight: bold;
-        }
+        text-align: center;
+        font-size: 1.5vh;
     }
 }
 
@@ -108,18 +126,4 @@
             border: 2.5px solid #5e410b;
         }
     }
-}
-
-@font-face {
-    font-family: 'ghanachoco';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'RIDIBatang';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 }

@@ -19,7 +19,7 @@
     .backgroundImage {
         width: 100%;
         height: 100%;
-        z-index: 0;
+        z-index: -2;
     }
 
     .backgroundOverlay {
@@ -27,26 +27,28 @@
         width: 100%;
         height: 100%;
         background-color: #fff7e8d7;
-        z-index: 1;
+        z-index: -1;
     }
 }
 
 .textBox {
     position: absolute;
-    top: 10%;
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 4vh;
+
     width: 80%;
-    z-index: 10;
+    height: 100%;
 
     .title {
         text-align: center;
         font-family: 'ghanachoco';
         font-size: 4vh;
-        margin-bottom: 2vh;
     }
 
     .textContainer {
@@ -59,7 +61,7 @@
         font-family: 'RIDIBatang';
         font-size: 2.5vh;
         text-align: center;
-        line-height: 5vh;
+        line-height: 4vh;
         opacity: 0;
         transform: translateY(10px);
         animation: fadeInUp 1s ease-out forwards;

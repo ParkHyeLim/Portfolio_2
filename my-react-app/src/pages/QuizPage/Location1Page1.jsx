@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./Location2Page1.module.scss";
+import styles from "./Location1Page1.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
 const quiz = {
-    question: "독립운동가들은 적에게 들키지 않기 위해 다양한 암호를 사용했다. 다음 중 실제 사용된 암호는 무엇일까?",
+    question: "배재학당에서 교육받은 학생들이 배운 과목은?",
     answer: [
-        "① 대한독립만세",
-        "② 해 뜨기 전이 가장 어둡다",
-        "③ 광복을 향해 빛을 던지다",
-        "④ 적의 눈을 속이고 뜻을 지키다",
+        "① 한학과 유교 경전",
+        "② 서양 과학과 의학",
+        "③ 무술과 병법",
+        "④ 농업 기술",
     ],
     correct : 2,
 };
 
 
-const Location2Page1 = () => {
+const Location1Page1 = () => {
     const navigate = useNavigate();
     const [selectAnswer, setSelectAnswer] = useState(0);
     const [isCorrect, setIsCorrect] = useState(true);
@@ -25,7 +25,7 @@ const Location2Page1 = () => {
     }
 
     const handleNavigater = () => {
-        if (quiz.correct === selectAnswer) navigate("../location2/page2");
+        if (quiz.correct === selectAnswer) navigate("../location1/page2");
         else setIsCorrect(false)
     }
 
@@ -52,6 +52,7 @@ const Location2Page1 = () => {
 
                 <div className={styles.btnBox}>
                     {!isCorrect && <div className={styles.checkText}>다시 한번 더 골라보자</div>}
+
                     <button onClick={handleNavigater}>
                         정답은?
                     </button>
@@ -62,4 +63,4 @@ const Location2Page1 = () => {
     );
 };
 
-export default Location2Page1;
+export default Location1Page1;
