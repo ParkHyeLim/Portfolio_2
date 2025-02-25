@@ -1,7 +1,7 @@
 import React, { useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import Webcam from "react-webcam";
-import styles from "./Location2Page2.module.scss";
+import styles from "./Location2Page1.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
 const Location2Page2 = () => {
@@ -36,7 +36,11 @@ const Location2Page2 = () => {
                     className={styles.webcam}
                     ref={webcamRef}
                     screenshotFormat="image/png"
-                    videoConstraints={{ facingMode: "environment" }} // 후면 카메라 사용
+                    videoConstraints={{
+                        width: 720,
+                        height: 1280,
+                        facingMode: "environment"
+                    }}
                 />
 
                 {/* 📸 촬영 버튼 */}
