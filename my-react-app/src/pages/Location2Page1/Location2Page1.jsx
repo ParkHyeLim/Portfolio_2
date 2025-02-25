@@ -33,13 +33,18 @@ const Location2Page2 = () => {
 
                 {/* 카메라 화면 */}
                 <Webcam
-                    className={styles.webcam}
                     ref={webcamRef}
                     screenshotFormat="image/png"
-                    videoConstraints={{
-                        width: 720,
-                        height: 1280,
-                        facingMode: "environment"
+                    style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        width: "calc(50vh * 3 / 4)",
+                        height: "50vh",
+                        maxHeight: "90vh",
+                        objectFit: "cover",
+                        aspectRatio: "3 / 4",
                     }}
                 />
 
