@@ -36,26 +36,24 @@ const Page3 = () => {
                 <img className={styles.backgroundImage} src={backgroundImg} alt="backgroundImg" />
                 <div className={styles.backgroundOverlay}></div>
 
-                <div className={styles.textBox}>
-                    <p className={styles.title}>Intro</p>
+                <div className={styles.title}>Intro</div>
 
-                    <div className={styles.textContainer}>
-                        {messages.slice(0, visibleCount).map((text, index) => (
-                            <div key={index} className={styles.textItem}>{text}</div>
-                        ))}
-                    </div>
-
-                    {visibleCount === messages.length && (
-                        <div className={styles.btnBox}>
-                            <button onClick={() => navigate("../")}>
-                                일상으로 돌아가기
-                            </button>
-                            <button onClick={() => navigate("../location1")}>
-                                숨겨진 비밀을 밝히기
-                            </button>
-                        </div>
-                    )}
+                <div className={styles.textContainer}>
+                    {messages.slice(0, visibleCount).map((text, index) => (
+                        <div key={index} className={styles.textItem}>{text}</div>
+                    ))}
                 </div>
+
+                {visibleCount === messages.length && (
+                    <div className={styles.btnBox}>
+                        <button onClick={() => navigate("../")}>
+                            일상으로 돌아가기
+                        </button>
+                        <button onClick={() => navigate("../location1")}>
+                            숨겨진 비밀을 밝히기
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
     );

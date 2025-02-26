@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 import styles from "./Location1.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
@@ -37,23 +38,22 @@ const Location1 = () => {
                 <img className={styles.backgroundImage} src={backgroundImg} alt="backgroundImg" />
                 <div className={styles.backgroundOverlay}></div>
 
-                <div className={styles.textBox}>
-                    <p className={styles.title}>챕터 1</p>
+                <div className={styles.title}>챕터 1</div>
 
-                    <div className={styles.textContainer}>
-                        {messages.slice(0, visibleCount).map((text, index) => (
-                            <div key={index} className={styles.textItem}>{text}</div>
-                        ))}
-                    </div>
-
-                    {visibleCount === messages.length && (
-                        <div className={styles.btnBox}>
-                            <button onClick={() => navigate("./page1")}>
-                                단서 찾기
-                            </button>
-                        </div>
-                    )}
+                <div className={styles.textContainer}>
+                    {messages.slice(0, visibleCount).map((text, index) => (
+                        <div key={index} className={styles.textItem}>{text}</div>
+                    ))}
                 </div>
+
+                {visibleCount === messages.length && (
+                    <div className={styles.btnBox}>
+                        <button onClick={() => navigate("./page1")}>
+                            단서 찾기&nbsp;&nbsp;
+                            <FaArrowRight className={styles.icon} size={20} />
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
     );

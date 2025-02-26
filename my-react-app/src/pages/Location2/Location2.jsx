@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 import styles from "./Location2.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
 const messages = [
     "이곳에 도착했군.",
-    "대한제국이 무너져갈 때, 우리는 이곳을 주시했다.",
+    "대한제국이 무너져갈 때,",
+    "우리는 이곳을 주시했다.",
+    "\u00A0",
     "누군가는 이곳을 피난처로 삼았고,",
     "누군가는 여기에 조선의 운명을 걸었다.",
     "\u00A0",
@@ -48,7 +51,8 @@ const Location2 = () => {
                 {visibleCount === messages.length && (
                     <div className={styles.btnBox}>
                         <button onClick={() => navigate("./page1")}>
-                            단서 찾기
+                            암호 풀기&nbsp;&nbsp;
+                            <FaArrowRight className={styles.icon} size={20} />
                         </button>
                     </div>
                 )}

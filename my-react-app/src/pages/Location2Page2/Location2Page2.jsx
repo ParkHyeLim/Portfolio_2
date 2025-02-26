@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 import styles from "./Location2Page2.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
@@ -11,9 +12,9 @@ const messages = [
     "덕수궁 돌담길.",
     "\u00A0",
     "우리의 마지막 단서가 그곳에 있다.",
-    "그것을 풀어내면 네가 찾던 보물을 얻게 될 것이다."
+    "그것을 풀어내면",
+    "네가 찾던 보물을 얻게 될 것이다."
 ];
-
 
 const Location2Page2 = () => {
     const navigate = useNavigate();
@@ -47,7 +48,8 @@ const Location2Page2 = () => {
                 {visibleCount === messages.length && (
                     <div className={styles.btnBox}>
                         <button onClick={() => navigate("../location3")}>
-                            덕수궁 돌담길로
+                            덕수궁 돌담길로&nbsp;&nbsp;
+                            <FaArrowRight className={styles.icon} size={20} />
                         </button>
                     </div>
                 )}

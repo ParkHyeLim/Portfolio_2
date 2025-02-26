@@ -15,7 +15,6 @@ const messages = [
     "네가 찾던 보물을 얻게 될 것이다."
 ];
 
-
 const Location3 = () => {
     const navigate = useNavigate();
     const [visibleCount, setVisibleCount] = useState(0);

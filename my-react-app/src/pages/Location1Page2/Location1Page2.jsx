@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 import styles from "./Location1Page2.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
@@ -12,7 +13,9 @@ const messages = [
     "\u00A0",
     "다음 장소는 구 러시아 공사관.",
     "우리 단체의 중요한 암호가 그곳에 남아 있다.",
-    "그 암호를 풀어야만, 진정한 길을 찾을 수 있을 것이다.",
+    "\u00A0",
+    "그 암호를 풀어야만,",
+    "진정한 길을 찾을 수 있을 것이다.",
 ];
 
 const Location1Page2 = () => {
@@ -34,20 +37,19 @@ const Location1Page2 = () => {
                 <img className={styles.backgroundImage} src={backgroundImg} alt="backgroundImg" />
                 <div className={styles.backgroundOverlay}></div>
 
-                <div className={styles.textBox}>
-                    <p className={styles.title}>챕터 1</p>
+                <div className={styles.title}>챕터 1</div>
 
-                    <div className={styles.textContainer}>
-                        {messages.slice(0, visibleCount).map((text, index) => (
-                            <div key={index} className={styles.textItem}>{text}</div>
-                        ))}
-                    </div>
+                <div className={styles.textContainer}>
+                    {messages.slice(0, visibleCount).map((text, index) => (
+                        <div key={index} className={styles.textItem}>{text}</div>
+                    ))}
                 </div>
 
                 {visibleCount === messages.length && (
                     <div className={styles.btnBox}>
                         <button onClick={() => navigate("../location2")}>
-                            찾아야 하는 물건은?
+                            구 러시아 공사관으로&nbsp;&nbsp;
+                            <FaArrowRight className={styles.icon} size={20} />
                         </button>
                     </div>
                 )}

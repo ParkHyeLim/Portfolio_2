@@ -13,7 +13,7 @@ const Page2 = () => {
     const [timeCount, setTimeCount] = useState(3);
 
     const handleNavigater = () => {
-        
+
         navigate("../page3");
     }
 
@@ -36,14 +36,14 @@ const Page2 = () => {
 
                 <div className={styles.textBox}>
                     <div className={styles.box1}>
-                        <p className={styles.title}>게임 소개</p>
+                        <div className={styles.title}>게임 소개</div>
                         <div className={styles.text1}>개암 속 주인공이 되어<br />
                             정동에 숨겨진 보물을 찾아라!<br />
                             정동에서 펼쳐지는 야외 방탈출 게임</div>
                     </div>
 
                     <div className={styles.box2}>
-                        <p className={styles.title}>주의 사항</p>
+                        <div className={styles.title}>주의 사항</div>
                         <div className={styles.text1}>1. 안전에 유의하여 게임을 진행해주세요.</div>
                         <p className={styles.text2}>게임 중 플레이어의 부주의로 인한 안전사고에 책임지지 않습니다.</p>
                         <div className={styles.text1}>2. 게임 속 장소의 상점들은 게임 진행과 관련이 없습니다.</div>
@@ -51,8 +51,7 @@ const Page2 = () => {
                         <div className={styles.text1}>3. 게임 진행을 위해 충분한 배터리와 모바일 데이터가 필요합니다.</div>
                         <div className={styles.text1}>4. 게임 종료 후 타인에게 스포일러는 삼가해주세요.</div>
                         <div className={styles.text2}>코드, 게임키트 속 미션지, 챗봇 내용 등이 유출되지 않도록 유의해 주세요.<br />
-                            게임 내용 스토리, 미션, 이미지 등을 유출하고나 무단 사용 시<br />
-                            당사자에게 법적 책임을 물 수 있습니다.</div>
+                            게임 내용 스토리, 미션, 이미지 등을 유출하거나 무단 사용 시 당사자에게 법적 책임을 물 수 있습니다.</div>
                     </div>
 
                     <button onClick={handleNavigater} disabled={!(timeCount === 0)}>

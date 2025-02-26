@@ -5,7 +5,8 @@ import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
 const messages = [
     "훌륭하다.",
-    "우리가 목숨을 걸고 지켜낸 것은, 단순한 나라가 아니었다.",
+    "우리가 목숨을 걸고 지켜낸 것은,",
+    "단순한 나라가 아니었다.",
     "\u00A0",
     "그것은 바로 신념과 기억이었다.",
     "\u00A0",
@@ -13,9 +14,9 @@ const messages = [
     "우리의 뜻은 영원히 남아야 한다.",
     "\u00A0",
     "이제 네가 이 이야기를 기억하고, 전할 차례다.",
-    "과거를 잊지 않는다면, 그것이 바로 우리의 승리다."
+    "과거를 잊지 않는다면,",    
+    "그것이 바로 우리의 승리다."
 ];
-
 
 const Location3Page2 = () => {
     const navigate = useNavigate();
