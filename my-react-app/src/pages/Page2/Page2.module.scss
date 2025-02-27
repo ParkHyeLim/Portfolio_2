@@ -170,6 +170,19 @@ button {
     }
 }
 
+@media (max-width: 900px) {
+    .backgroundImage,
+    .backgroundOverlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
 @font-face {
     font-family: 'ghanachoco';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
