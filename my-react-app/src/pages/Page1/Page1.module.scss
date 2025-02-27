@@ -104,9 +104,9 @@ body {
 
         width: 100vw;
         height: calc(100vw * 16 / 11);
-
+        
         .backgroundImage {
-            position: absolute;
+            position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -114,12 +114,12 @@ body {
             width: 100vw;
             height: calc(100vw * 16 / 11);
 
-            z-index: -1;
+            z-index: 0;
         }
 
         .userBox {
             position: relative;
-            bottom: 8%;
+            bottom: 10vw;
             display: flex;
             flex-direction: column;
             justify-content: center;
