@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa";
 import styles from "./Location1Page2.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
@@ -48,8 +47,7 @@ const Location1Page2 = () => {
                 {visibleCount === messages.length && (
                     <div className={styles.btnBox}>
                         <button onClick={() => navigate("../location2")}>
-                            구 러시아 공사관으로&nbsp;&nbsp;
-                            <FaArrowRight className={styles.icon} size={20} />
+                            구 러시아 공사관으로
                         </button>
                     </div>
                 )}

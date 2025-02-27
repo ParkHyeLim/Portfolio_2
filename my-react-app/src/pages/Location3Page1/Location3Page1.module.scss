@@ -88,6 +88,12 @@
 
         text-align: center;
         font-size: 1.5vh;
+
+        @media (max-width: 900px) {
+            width: 60vw;
+            text-align: center;
+            font-size: 4vw;
+        }
     }
 }
 
@@ -103,7 +109,9 @@
     align-items: center;
     gap: 2vh;
 
-    margin: 5vh 0 0 0;
+    @media (max-width: 900px) {
+        gap: 2vw;
+    }
 
     .checkText {
         padding: 0 0.2vh 0.3vh 0.2vh;

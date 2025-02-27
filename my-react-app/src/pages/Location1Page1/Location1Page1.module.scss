@@ -1,77 +1,79 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; // 불필요한 스크롤 제거
+}
+
 .PageContainer {
     width: 100vw;
     height: 100vh;
     background-color: #f3d8c559;
-}
 
-.contentsContainer {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: auto;
-    height: 100%;
-    aspect-ratio: 11 / 16;
+    .contentsContainer {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
 
-    .backgroundImage {
-        width: 100%;
+        width: auto;
         height: 100%;
-        z-index: -2;
+        aspect-ratio: 11 / 16;
+
+        @media (max-width: 900px) {
+            width: 100%;
+            height: auto;
+        }
+
+        .backgroundImage {
+            width: 100%;
+            height: 100%;
+
+            z-index: -2;
+        }
+
+        .backgroundOverlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #fff7e8d7;
+            z-index: -1;
+        }
     }
-
-    .backgroundOverlay {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: #fff7e8d7;
-        z-index: -1;
-    }
-}
-
-.webcam {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    width: 50%;
 }
 
 .textBox {
-    position: absolute;
+    position: fixed;
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
     width: 80%;
-    height: 100%;
 
     .title {
-        margin: 5vh;
         text-align: center;
         font-family: 'ghanachoco';
         font-size: 4vh;
-        margin-bottom: 2vh;
     }
 
     .text {
-        font-family: 'RIDIBatang';
-        font-size: 2.5vh;
         text-align: center;
         line-height: 5vh;
+        font-family: 'RIDIBatang';
+        font-size: 2.5vh;
     }
 }
 
 .captureButton {
     position: absolute;
-    bottom: 10%;
+    bottom: 8%;
     left: 50%;
     transform: translateX(-50%);
 
@@ -85,8 +87,12 @@
     border: none;
 
     cursor: pointer;
+    transition: all 0.2s;
 
-    z-index: 10;
+    @media (max-width: 900px) {
+        padding: 2vw 3vw;
+        border: 2.5px solid #5e410b67;
+    }
 
     &:hover {
         border: 2.5px solid #5e410b;

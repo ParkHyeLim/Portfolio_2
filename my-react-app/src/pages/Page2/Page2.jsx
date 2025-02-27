@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
 import { FaArrowRight } from "react-icons/fa";
 import styles from "./Page2.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
@@ -10,6 +11,7 @@ import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
 const Page2 = () => {
     const navigate = useNavigate();
+    const isMobile = useMediaQuery({ query: "(max-width: 900px)" });
     const [timeCount, setTimeCount] = useState(3);
 
     const handleNavigater = () => {
@@ -60,7 +62,7 @@ const Page2 = () => {
                             :
                             <div>
                                 <div>숨겨진 보물 찾으러 가기</div>
-                                <FaArrowRight className={styles.icon} size={20} />
+                                <FaArrowRight className={styles.icon} size={!isMobile? "2vh" : "4vw"} />
                             </div>
                         }
                     </button>

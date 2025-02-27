@@ -29,7 +29,7 @@ const Location3Page1 = () => {
                         대한의 독립과 자유는 (____)에게 있다
                     </div>
 
-                    <input placeholder="빈칸에 들어갈 단어를 입력하세요" onChange={(e) => setAnswer(e.target.value)} />
+                    <input placeholder="2글자 입력하세요" onChange={(e) => setAnswer(e.target.value)} />
                 </div>
 
                 <div className={styles.btnBox}>

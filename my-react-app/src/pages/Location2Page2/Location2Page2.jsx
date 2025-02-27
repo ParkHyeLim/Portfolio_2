@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa";
 import styles from "./Location2Page2.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
@@ -48,8 +47,7 @@ const Location2Page2 = () => {
                 {visibleCount === messages.length && (
                     <div className={styles.btnBox}>
                         <button onClick={() => navigate("../location3")}>
-                            덕수궁 돌담길로&nbsp;&nbsp;
-                            <FaArrowRight className={styles.icon} size={20} />
+                            덕수궁 돌담길로
                         </button>
                     </div>
                 )}

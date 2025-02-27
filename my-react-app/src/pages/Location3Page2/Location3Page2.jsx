@@ -50,7 +50,7 @@ const Location3Page2 = () => {
                 {visibleCount === messages.length && (
                     <div className={styles.btnBox}>
                         <button onClick={() => navigate("../")}>
-                            끝
+                            고이 간직하기
                         </button>
                     </div>
                 )}
