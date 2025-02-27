@@ -50,10 +50,14 @@ body {
 }
 
 .textBox {
-    position: fixed;
+    position: absolute;
     top: 5%;
     left: 50%;
     transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     width: 80%;
 
@@ -61,6 +65,11 @@ body {
         text-align: center;
         font-family: 'ghanachoco';
         font-size: 4vh;
+        margin-bottom: 2vh;
+        
+        @media (max-width: 900px) {
+            font-size: 6vw;
+        }
     }
 
     .text {

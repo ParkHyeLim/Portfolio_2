@@ -1,6 +1,5 @@
-import React, { useRef, useCallback, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Webcam from "react-webcam";
 import styles from "./Location3Page1.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
 

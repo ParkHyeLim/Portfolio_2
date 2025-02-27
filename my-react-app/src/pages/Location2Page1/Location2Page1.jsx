@@ -34,7 +34,7 @@ const Location2Page1 = () => {
                 <img className={styles.backgroundImage} src={backgroundImg} alt="backgroundImg" />
                 <div className={styles.backgroundOverlay}></div>
 
-                <p className={styles.title}>챕터 1</p>
+                <p className={styles.title}>챕터 2</p>
 
                 <div className={styles.quizBox}>
                     <div className={styles.question}>{quiz.question}</div>
