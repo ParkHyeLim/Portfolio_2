@@ -4,18 +4,15 @@ import styles from "./Location3Page2.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
 const messages = [
-    "훌륭하다.",
-    "우리가 목숨을 걸고 지켜낸 것은,",
-    "단순한 나라가 아니었다.",
+    "드디어, 모든 조각이 맞춰졌다.",
     "\u00A0",
-    "그것은 바로 신념과 기억이었다.",
+    "우리는 독립협회였다.",
+    "서재필을 필두로, 우리는 조선의 미래를 꿈꾸었다.",
+    "자유와 평등, 독립을 위해 싸웠다.",
     "\u00A0",
-    "대한광복회는 역사의 뒤편으로 사라졌지만,",
-    "우리의 뜻은 영원히 남아야 한다.",
-    "\u00A0",
-    "이제 네가 이 이야기를 기억하고, 전할 차례다.",
-    "과거를 잊지 않는다면,",    
-    "그것이 바로 우리의 승리다."
+    "너는 이제 우리의 정신을 기억할 것이다.",
+    "그것이 바로 네가 찾은 보물이다.",
+    "이제, 그 뜻을 이어갈 준비가 되었는가?"
 ];
 
 const Location3Page2 = () => {
@@ -50,7 +47,7 @@ const Location3Page2 = () => {
                 {visibleCount === messages.length && (
                     <div className={styles.btnBox}>
                         <button onClick={() => navigate("../")}>
-                            고이 간직하기
+                            뜻 이어가기
                         </button>
                     </div>
                 )}

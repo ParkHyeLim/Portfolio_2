@@ -4,17 +4,17 @@ import styles from "./Location2.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
 const messages = [
-    "이곳에 도착했군.",
-    "대한제국이 무너져갈 때,",
-    "우리는 이곳을 주시했다.",
+    "조선이 위험에 처했을 때,",
+    "황제는 이곳으로 몸을 피했다.",
     "\u00A0",
-    "누군가는 이곳을 피난처로 삼았고,",
-    "누군가는 여기에 조선의 운명을 걸었다.",
+    "그렇기에 우리가 의지해야 할 것은 황제가 아니라,",
+    "바로 우리 자신이었다.",
     "\u00A0",
-    "하지만 우리의 존재를 숨겨야 했기에,",
-    "암호 없이 안으로 들어갈 수는 없었다.",
+    "이곳에서 우리는 조선의 미래를 논의했고",
+    "새로운 시대를 준비하기 위해,",
+    "우리는 행동해야 했다.",
     "\u00A0",
-    "이제 네가 그 암호를 풀 차례다."
+    "너도 서둘러 동참하라."
 ];
 
 
@@ -50,7 +50,7 @@ const Location2 = () => {
                 {visibleCount === messages.length && (
                     <div className={styles.btnBox}>
                         <button onClick={() => navigate("./page1")}>
-                            암호 풀기
+                            동참하기
                         </button>
                     </div>
                 )}

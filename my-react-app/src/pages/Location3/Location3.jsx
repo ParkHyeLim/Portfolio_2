@@ -4,15 +4,15 @@ import styles from "./Location3.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
 const messages = [
-    "이곳이 마지막 장소다.",
-    "우리 동지들은 이 길을 걸으며 수많은 결정을 내렸다.",
-    "때로는 조심스럽게, 때로는 단호하게.",
+    "이곳은 우리가 배우고, 성장하며, 독립을 꿈꾼 곳.",
+    "배재학당에서 우리는 서로를 다독이며 새로운 미래를 계획했다.",
     "\u00A0",
-    "이제 마지막 관문이다.",
-    "우리의 신념을 되새겨라.",
+    "그러나 이 길이 쉽지 않음을 알았다.",
+    "우리에게 필요한 것은 단순한 희망이 아니라, 실천이었다.",
     "\u00A0",
-    "우리의 구호를 완성하면,",
-    "네가 찾던 보물을 얻게 될 것이다."
+    "마지막 질문이다.",
+    "우리는 누구였는가?",
+    "그리고 우리는 무엇을 위해 싸웠는가?"
 ];
 
 const Location3 = () => {
@@ -47,7 +47,7 @@ const Location3 = () => {
                 {visibleCount === messages.length && (
                     <div className={styles.btnBox}>
                         <button onClick={() => navigate("./page1")}>
-                            구호 완성하기
+                            마지막 질문에 답하기
                         </button>
                     </div>
                 )}

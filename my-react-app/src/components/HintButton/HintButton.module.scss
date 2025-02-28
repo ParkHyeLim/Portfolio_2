@@ -1,8 +1,8 @@
-.hintContainer{
-    z-index: 10;    
+.hintContainer {
+    z-index: 10;
 }
 
-.hintBtn{
+.hintBtn {
     position: fixed;
     top: 2vh;
     right: 2vh;
@@ -17,17 +17,25 @@
     border-radius: 50%;
     background-color: #FFFFFF;
 
+    @media (max-width: 900px) {
+        top: 2vw;
+        right: 2vw;
+
+        width: 8vw;
+        height: 8vw;
+    }
+
     &:hover {
         background-color: #f3e4c5;
     }
 }
 
-.hintBox{
+.hintBox {
     position: fixed;
     top: 8vh;
     right: 2vh;
 
-    width: 30vh;
+    width: 35vh;
     padding: 1.1vh 2vh 1.5vh 2vh;
 
     background-color: #fffbf2;
@@ -35,9 +43,20 @@
     border: 0.2px solid #2b1f02;
 
     font-family: "RIDIBatang";
-    font-size: 1.5vh;
+    font-size: 2vh;
 
-    
+    @media (max-width: 900px) {
+        top: 11.5vw;
+        right: 2vw;
+
+        width: 46vw;
+
+        border-radius: 1.8vw;
+
+        padding: 1.5vw 2.5vw 1.8vw 2.5vw;
+        font-size: 3.5vw;
+        white-space: pre-line;
+    }
 }
 
 @font-face {

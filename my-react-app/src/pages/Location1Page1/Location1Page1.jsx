@@ -4,6 +4,10 @@ import { useMediaQuery } from "react-responsive";
 import Webcam from "react-webcam";
 import styles from "./Location1Page1.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
+import BackButton from "../../components/BackButton/BackButton";
+import HintButton from "../../components/HintButton/HintButton";
+
+const hint = "건물을 한번 찍어볼까?"
 
 const Location1Page1 = () => {
     const navigate = useNavigate();
@@ -26,6 +30,9 @@ const Location1Page1 = () => {
             <div className={styles.contentsContainer}>
                 <img className={styles.backgroundImage} src={backgroundImg} alt="backgroundImg" />
                 <div className={styles.backgroundOverlay}></div>
+
+                <BackButton />
+                <HintButton text={hint} />
 
                 <div className={styles.textBox}>
                     <div className={styles.title}>챕터 1</div>

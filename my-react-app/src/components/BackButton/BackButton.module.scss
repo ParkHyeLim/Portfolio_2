@@ -1,8 +1,19 @@
-.backBtn{
+.backBtn {
     position: fixed;
     top: 2vh;
     left: 2vh;
     width: 5vh;
 
     z-index: 10;
+}
+
+@media (max-width: 900px) {
+    .backBtn {
+        position: fixed;
+        top: 2vw;
+        left: 2vw;
+        width: 8vw;
+
+        z-index: 10;
+    }
 }

@@ -2,16 +2,20 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Location2Page1.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
+import BackButton from "../../components/BackButton/BackButton";
+import HintButton from "../../components/HintButton/HintButton";
+
+const hint = "나라의 운명이 흔들리던 시기, 누군가는 안전한 곳에서 새로운 변화를 꿈꾸었다.";
 
 const quiz = {
-    question: "독립운동가들은 적에게 들키지 않기 위해\u000A다양한 암호를 사용했다.\u000A다음 중 실제 사용된 암호는 무엇일까?",
+    question: "1896년,\u000A조선의 한 정치인이 이곳으로 몸을 피했다.\u000A그가 이곳에서 추진한 개혁의 핵심 가치는 무엇이었을까?",
     answer: [
-        "① 대한독립만세",
-        "② 해 뜨기 전이 가장 어둡다",
-        "③ 광복을 향해 빛을 던지다",
-        "④ 적의 눈을 속이고 뜻을 지키다",
+        "① 나라를 외국에 넘기는 것",
+        "② 국민의 자유와 권리 확대",
+        "③ 왕권 강화를 위한 법 정비",
+        "④ 신분제를 강화하는 정책",
     ],
-    correct: 2,
+    correct: 2,  // 국민의 자유와 권리 확대
 };
 
 const Location2Page1 = () => {
@@ -34,6 +38,9 @@ const Location2Page1 = () => {
                 <img className={styles.backgroundImage} src={backgroundImg} alt="backgroundImg" />
                 <div className={styles.backgroundOverlay}></div>
 
+                <BackButton />
+                <HintButton text={hint} />
+                
                 <p className={styles.title}>챕터 2</p>
 
                 <div className={styles.quizBox}>
