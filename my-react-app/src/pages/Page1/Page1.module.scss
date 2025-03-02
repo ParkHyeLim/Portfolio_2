@@ -65,9 +65,11 @@ html, body {
     button {
         margin-top: 5vh;
         padding: 0.5vh 3vh;
+
         background-color: #fce5d3;
         border: 1px solid #592f12;
         border-radius: 1.2vh;
+
         line-height: 4vh;
         font-family: "ghanachoco";
         font-size: 2.5vh;
@@ -106,15 +108,19 @@ html, body {
 
         input {
             margin: 0;
+            padding: 1.5vw 2vw;
             width: 65vw;
+
             border-radius: 2vw;
             font-size: 4vw;
         }
 
         button {
             margin: 0;
-            padding: 0.5vw 4vw;
+            padding: 1vw 4vw;
+
             border-radius: 2vw;
+            line-height: 6vw;
             font-size: 4.5vw;
         }
     }
