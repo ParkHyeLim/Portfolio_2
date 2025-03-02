@@ -58,10 +58,10 @@ body {
 }
 
 .title {
-    position: fixed;
-    top: 9%;
+    position: absolute;
+    top: 11%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
 
     width: 100%;
     text-align: center;
@@ -153,6 +153,7 @@ body {
     }
 
     .title {
+        top: 17%;
         font-size: 5.5vw;
     }
 
@@ -164,7 +165,7 @@ body {
     }
 
     .btnBox {
-        bottom: -7%;
+        bottom: -7.5%;
 
         gap: 5vw;
         width: 100%;
