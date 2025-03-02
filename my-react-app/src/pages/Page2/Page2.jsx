@@ -5,10 +5,6 @@ import { FaArrowRight } from "react-icons/fa";
 import styles from "./Page2.module.scss";
 import backgroundImg from '../../assets/image/backgroundImage.jpg';
 
-// 메모를 발견한 자에게 전하는 글
-// 나는 정동길 어딘가에 귀중한 보물을 숨겼다
-// 보물을 찾기 위해서는 암호를 풀어야 한다
-
 const Page2 = () => {
     const navigate = useNavigate();
     const isMobile = useMediaQuery({ query: "(max-width: 900px)" });

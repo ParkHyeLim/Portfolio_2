@@ -25,7 +25,7 @@ const Page1 = () => {
                 <div className={styles.userBox}>
                     <div className={styles.messageText}>{message}</div>
                     <input placeholder="입장 코드를 입력해주세요" onChange={(e) => setCode(e.target.value)} />
-                    <button onClick={handleNavigater}>게임 시작</button>
+                    <button onClick={handleNavigater}>입장하기</button>
                 </div>
             </div>
 
