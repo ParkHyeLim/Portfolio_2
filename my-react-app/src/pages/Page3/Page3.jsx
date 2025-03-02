@@ -42,6 +42,7 @@ const Page3 = () => {
                     {messages.slice(0, visibleCount).map((text, index) => (
                         <div key={index} className={styles.textItem}>{text}</div>
                     ))}
+
                 </div>
 
                 {visibleCount === messages.length && (
