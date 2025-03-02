@@ -34,14 +34,12 @@ const Location3Page2 = () => {
                 <img className={styles.backgroundImage} src={backgroundImg} alt="backgroundImg" />
                 <div className={styles.backgroundOverlay}></div>
 
-                <div className={styles.textBox}>
-                    <p className={styles.title}>챕터 3</p>
+                <div className={styles.title}>챕터 3</div>
 
-                    <div className={styles.textContainer}>
-                        {messages.slice(0, visibleCount).map((text, index) => (
-                            <div key={index} className={styles.textItem}>{text}</div>
-                        ))}
-                    </div>
+                <div className={styles.textContainer}>
+                    {messages.slice(0, visibleCount).map((text, index) => (
+                        <div key={index} className={styles.textItem}>{text}</div>
+                    ))}
                 </div>
 
                 {visibleCount === messages.length && (

@@ -29,19 +29,19 @@ const Location3Page1 = () => {
                 <BackButton />
                 <HintButton text={hint} />
 
-                <div className={styles.textBox}>
-                    <div className={styles.title}>챕터 3</div>
+                <div className={styles.title}>챕터 3</div>
 
+                <div className={styles.textBox}>
                     {/* 문제 출제: 배재학당과 관련된 단체명을 맞히는 퀴즈 */}
                     <div className={styles.text}>
-                        "우리는 조선의 미래를 고민하며 행동에 나섰다."<br />
-                        "우리가 만든 단체의 이름은?"
+                        우리는 조선의 미래를 고민하며 행동에 나섰다.<br />
+                        우리가 만든 단체의 이름은?
                     </div>
 
                     {/* 정답 입력 필드 */}
-                    <input 
-                        placeholder="단체명을 입력하세요.(4글자)" 
-                        onChange={(e) => setAnswer(e.target.value)} 
+                    <input
+                        placeholder="단체명을 입력하세요.(4글자)"
+                        onChange={(e) => setAnswer(e.target.value)}
                     />
                 </div>
 
