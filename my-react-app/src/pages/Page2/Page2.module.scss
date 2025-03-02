@@ -10,6 +10,7 @@ body {
 
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .contentsContainer {
@@ -32,6 +33,11 @@ body {
     height: 100%;
 }
 
+.backgroundOverlay{
+    background-color: #fff2e9dc;
+    z-index: 1;
+}
+
 .userBox {
     display: flex;
     flex-direction: column;
@@ -41,7 +47,7 @@ body {
     margin: 0 0 10vh 0;
 
     width: 100%;
-    z-index: 1;
+    z-index: 2;
 
     .messageText {
         background-color: #f3d8c59e;
