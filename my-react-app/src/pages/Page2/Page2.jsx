@@ -26,7 +26,7 @@ const Page2 = () => {
     }, [timeCount]);
 
     return (
-        <div className={styles.Page1Container}>
+        <div className={styles.PageContainer}>
 
             <div className={styles.contentsContainer}>
                 <img className={styles.backgroundImage} src={backgroundImg} alt="backgroundImg" />
@@ -43,9 +43,9 @@ const Page2 = () => {
                     <div className={styles.box2}>
                         <div className={styles.title}>주의 사항</div>
                         <div className={styles.text1}>1. 안전에 유의하여 게임을 진행해주세요.</div>
-                        <p className={styles.text2}>게임 중 플레이어의 부주의로 인한 안전사고에 책임지지 않습니다.</p>
+                        <div className={styles.text2}>게임 중 플레이어의 부주의로 인한 안전사고에 책임지지 않습니다.</div>
                         <div className={styles.text1}>2. 게임 속 장소의 상점들은 게임 진행과 관련이 없습니다.</div>
-                        <p className={styles.text2}>소음 또는 진로 방해하지 않도록 유의해 주세요.</p>
+                        <div className={styles.text2}>소음 또는 진로 방해하지 않도록 유의해 주세요.</div>
                         <div className={styles.text1}>3. 게임 진행을 위해 충분한 배터리와 모바일 데이터가 필요합니다.</div>
                         <div className={styles.text1}>4. 게임 종료 후 타인에게 스포일러는 삼가해주세요.</div>
                         <div className={styles.text2}>코드, 게임키트 속 미션지, 챗봇 내용 등이 유출되지 않도록 유의해 주세요.<br />
@@ -56,10 +56,10 @@ const Page2 = () => {
                         {!(timeCount === 0) ?
                             timeCount
                             :
-                            <div>
+                            <>
                                 <div>숨겨진 보물 찾으러 가기</div>
-                                <FaArrowRight className={styles.icon} size={!isMobile? "2vh" : "4vw"} />
-                            </div>
+                                <FaArrowRight className={styles.icon} size={!isMobile? "2.5vh" : "4vw"} />
+                            </>
                         }
                     </button>
                 </div>

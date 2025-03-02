@@ -1,6 +1,11 @@
 html,
 body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
     background-color: #fff2e9;
+    overflow: hidden;
 }
 
 .PageContainer {
@@ -10,13 +15,12 @@ body {
 
     width: 100%;
     height: 100%;
-    overflow: hidden;
 }
 
 .contentsContainer {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 
     width: auto;
@@ -26,54 +30,97 @@ body {
 
 .backgroundImage {
     position: absolute;
-    top: 50.5%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.backgroundOverlay {
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    height: 100%;
-}
+    width: auto;
+    height: 100vh;
+    aspect-ratio: 5 / 7;
 
-.backgroundOverlay{
-    background-color: #fff2e9dc;
+    background-color: #f8eee2db;
     z-index: 1;
 }
 
-.userBox {
+.textBox {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-
-    margin: 0 0 10vh 0;
+    gap: 3vh;
 
     width: 100%;
     z-index: 2;
 
-    .messageText {
-        background-color: #f3d8c59e;
+    .title {
+        width: 100%;
+        text-align: center;
 
-        color: #FF0000;
-        font-family: "RIDIBatang";
-        font-size: 2vh;
+        font-family: "ghanachoco";
+        font-size: 3.5vh;
     }
 
-    input {
-        margin: 2vh 0 0 0;
-        padding: 1vh 2vh;
-
-        width: 40vh;
-
-        border: 1px solid #592f12;
-        border-radius: 1.2vh;
-
-        text-align: center;
+    .box1,
+    .box2 {
+        display: flex;
+        flex-direction: column;
         font-family: "RIDIBatang";
-        font-size: 2.2vh;
+    }
+
+    .box1 {
+        align-items: center;
+        gap: 2vh;
+
+        .text1 {
+            text-align: center;
+            font-size: 2.5vh;
+        }
+    }
+
+    .box2 {
+        justify-content: center;
+        align-items: flex-start;
+
+        width: 100vh*5/7*0.75;
+
+        .text1 .text2 {
+            width: 100%;
+            font-family: "RIDIBatang";
+        }
+
+        .text1 {
+            margin: 2vh 0 0 0;
+            text-indent: -1.5vh;
+            font-size: 2.2vh;
+            font-weight: bold;
+        }
+
+        .text2 {
+            margin: 0.5vh 0 0 0;
+            padding-left: 1vh;
+            font-size: 2vh;
+        }
     }
 
     button {
-        margin: 5vh 0 0 0;
-        padding: 0.5vh 3vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1vh;
+
+        margin-top: 5vh;
+        padding: 1vh 3vh;
 
         background-color: #fce5d3;
         border: 1px solid #592f12;
@@ -85,86 +132,77 @@ body {
     }
 }
 
-// 모바일 스타일
+/* 모바일 스타일 */
 @media (max-width: 900px) {
-    html,
-    body {
-        background-color: #fff2e9;
-    }
-    
     .PageContainer {
         width: 100vw;
         height: 100vh;
     }
 
     .contentsContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-
+        justify-content: center;
         width: 100vw;
-        aspect-ratio: 5 / 7;
         height: auto;
+        aspect-ratio: 5 / 7;
     }
 
     .backgroundImage {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
         width: 100%;
         height: auto;
     }
 
-    .userBox {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
+    .backgroundOverlay {
+        width: 100vw;
+        height: 142vw;
+    }
 
-        margin: 0 0 10vw 0;
+    .textBox {
+        gap: 3vw;
 
-        width: 100%;
-        z-index: 1;
-
-        .messageText {
-            background-color: #f3d8c59e;
-
-            color: #FF0000;
-            font-family: "RIDIBatang";
-            font-size: 4vw;
-        }
-
-        input {
-            margin: 4vw 0 0 0;
-            padding: 2vw;
-
-            width: 65vw;
-
-            border: 1px solid #592f12;
-            border-radius: 2vw;
-
-            text-align: center;
-            font-family: "RIDIBatang";
+        .title {
             font-size: 5vw;
         }
 
+        .box1 {
+            gap: 2vw;
+
+            .text1 {
+                font-size: 3.5vw;
+            }
+        }
+
+        .box2 {
+            width: 80vw;
+
+            .text1 {
+                margin: 2vw 0 0 0;
+                text-indent: -3vw;
+                font-size: 3.5vw;
+            }
+
+            .text2 {
+                margin: 0.5vw 0 0 0;
+                padding-left: 1vw;
+                font-size: 3vw;
+            }
+        }
+
         button {
-            margin: 6vw 0 0 0;
-            padding: 0.5vw 4vw;
+            gap: 1vw;
 
-            background-color: #fce5d3;
-            border: 1px solid #592f12;
-            border-radius: 2vw;
+            margin-top: 5vh;
+            padding: 1.5vw 4vw;
 
+            border-radius: 1.5vw;
+
+            line-height: 4.5vw;
             font-family: "ghanachoco";
-            font-size: 4.8vw;
+            font-size: 3.5vw;
         }
     }
 }
 
+/* 폰트 설정 */
 @font-face {
     font-family: 'ghanachoco';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
