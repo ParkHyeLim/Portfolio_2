@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import Webcam from "react-webcam";
 import styles from "./Location1Page1.module.scss";
-import backgroundImg from '../../assets/image/backgroundImage.jpg';
-import BackButton from "../../components/BackButton/BackButton";
-import HintButton from "../../components/HintButton/HintButton";
+import backgroundImg from '../../../assets/image/backgroundImage.jpg';
+import BackButton from "../../../components/BackButton/BackButton";
+import HintButton from "../../../components/HintButton/HintButton";
 
 const hint = "건물을 한번 찍어볼까?"
 
@@ -36,7 +36,8 @@ const Location1Page1 = () => {
 
                 <div className={styles.textBox}>
                     <div className={styles.title}>챕터 1</div>
-                    <div className={styles.text}>서울 정동 어딘가에, 우리가 남긴 메시지가 있다. 그것을 찾아야 한다.</div>
+                    <div className={styles.text}>서울 정동 어딘가에, 우리가 남긴 메시지가 있다.<br />
+                    그것을 찾아야 한다.</div>
                 </div>
                 {/* 카메라 화면 */}
                 <>
@@ -55,6 +56,7 @@ const Location1Page1 = () => {
                             maxHeight: "90vh",
                             objectFit: "cover",
                             aspectRatio: "3 / 4",
+                            zIndex: 10
                         }}
                     />
                 </>

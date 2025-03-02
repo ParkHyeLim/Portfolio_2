@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Location1Page2.module.scss";
-import backgroundImg from '../../assets/image/backgroundImage.jpg';
+import backgroundImg from '../../../assets/image/backgroundImage.jpg';
 
 const messages = [
     "잘 찾았군.",

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Location3Page1.module.scss";
-import backgroundImg from '../../assets/image/backgroundImage.jpg';
-import BackButton from "../../components/BackButton/BackButton";
-import HintButton from "../../components/HintButton/HintButton";
+import backgroundImg from '../../../assets/image/backgroundImage.jpg';
+import BackButton from "../../../components/BackButton/BackButton";
+import HintButton from "../../../components/HintButton/HintButton";
 
 // 힌트 설정 (배재학당 출신들이 만든 단체를 유추할 수 있도록)
 const hint = "개화와 독립을 위해 행동한\u000A사람들의 모임";

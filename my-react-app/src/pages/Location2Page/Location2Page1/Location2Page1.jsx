@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Location2Page1.module.scss";
-import backgroundImg from '../../assets/image/backgroundImage.jpg';
-import BackButton from "../../components/BackButton/BackButton";
-import HintButton from "../../components/HintButton/HintButton";
+import backgroundImg from '../../../assets/image/backgroundImage.jpg';
+import BackButton from "../../../components/BackButton/BackButton";
+import HintButton from "../../../components/HintButton/HintButton";
 
 const hint = "나라의 운명이 흔들리던 시기, 누군가는 안전한 곳에서 새로운 변화를 꿈꾸었다.";
 
@@ -41,7 +41,7 @@ const Location2Page1 = () => {
                 <BackButton />
                 <HintButton text={hint} />
                 
-                <p className={styles.title}>챕터 2</p>
+                <div className={styles.title}>챕터 2</div>
 
                 <div className={styles.quizBox}>
                     <div className={styles.question}>{quiz.question}</div>

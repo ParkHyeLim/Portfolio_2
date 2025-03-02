@@ -1,81 +1,85 @@
 html,
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; // 불필요한 스크롤 제거
+
+    background-color: #fff2e9;
+    overflow: hidden;
 }
 
 .PageContainer {
-    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.contentsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: auto;
     height: 100vh;
-    background-color: #f3d8c559;
-
-    .contentsContainer {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-
-        width: auto;
-        height: 100%;
-        aspect-ratio: 11 / 16;
-
-        @media (max-width: 900px) {
-            width: 100%;
-            height: auto;
-        }
-
-        .backgroundImage {
-            width: 100%;
-            height: 100%;
-
-            z-index: -2;
-        }
-
-        .backgroundOverlay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #fff7e8d7;
-            z-index: -1;
-        }
-    }
+    aspect-ratio: 5 / 7;
 }
 
-.title {
+.backgroundImage {
     position: absolute;
-    top: 5%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-
-    text-align: center;
-    font-family: 'ghanachoco';
-    font-size: 4vh;
-    margin-bottom: 2vh;
-
-    @media (max-width: 900px) {
-        font-size: 6vw;
-    }
+    transform: translate(-50%, -50%);
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
 }
 
-.textContainer {
+.backgroundOverlay {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
+    width: auto;
+    height: 100vh;
+    aspect-ratio: 5 / 7;
+
+    background-color: #f8eee2db;
+    z-index: 1;
+}
+
+.title {
+    position: absolute;
+    top: 11%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    text-align: center;
+
+    font-family: "ghanachoco";
+    font-size: 3.5vh;
+
+    z-index: 2;
+}
+
+.textContainer {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 
-    width: 80%;
+    width: 100%;
+    z-index: 10;
 
     .textItem {
         text-align: center;
@@ -86,17 +90,12 @@ body {
         opacity: 0;
         transform: translateY(10px);
         animation: fadeInUp 1s ease-out forwards;
-
-        @media (max-width: 900px) {
-            line-height: 7vw;
-            font-size: 4vw;
-        }
     }
 }
 
 .btnBox {
-    position: absolute;
-    bottom: 10%;
+    position: relative;
+    bottom: -8.5%;
     left: 50%;
     transform: translateX(-50%);
 
@@ -108,12 +107,15 @@ body {
 
     width: 100%;
 
+    z-index: 2;
+
     button {
         padding: 1vh 2vh;
 
         background-color: #ffe8bd;
         border-radius: 1.2vh;
 
+        line-height: 3vh;
         font-family: 'ghanachoco';
         font-size: 2vh;
         border: none;
@@ -121,13 +123,60 @@ body {
         cursor: pointer;
         transition: all 0.2s;
 
-        @media (max-width: 900px) {
-            padding: 2vw 3vw;
-            border: 2.5px solid #5e410b67;
-        }
-
         &:hover {
             border: 2.5px solid #5e410b;
+        }
+    }
+}
+
+// 모바일 스타일
+@media (max-width: 900px) {
+    .PageContainer {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .contentsContainer {
+        justify-content: center;
+        width: 100vw;
+        height: auto;
+        aspect-ratio: 5 / 7;
+    }
+
+    .backgroundImage {
+        width: 100%;
+        height: auto;
+    }
+
+    .backgroundOverlay {
+        width: 100vw;
+        height: 142vw;
+    }
+
+    .title {
+        top: 17%;
+        font-size: 5.5vw;
+    }
+
+    .textContainer {
+        .textItem {
+            line-height: 8vw;
+            font-size: 4vw;
+        }
+    }
+
+    .btnBox {
+        bottom: -7.5%;
+
+        gap: 5vw;
+        width: 100%;
+
+        button {
+            padding: 2vw 4vw;
+            border: 2.5px solid #5e410b67;
+            border-radius: 1.5vw;
+            line-height: 4vw;
+            font-size: 3vw;
         }
     }
 }

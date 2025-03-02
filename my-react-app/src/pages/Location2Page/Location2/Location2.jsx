@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Location2.module.scss";
-import backgroundImg from '../../assets/image/backgroundImage.jpg';
+import backgroundImg from '../../../assets/image/backgroundImage.jpg';
 
 const messages = [
     "조선이 위험에 처했을 때,",
@@ -37,14 +37,12 @@ const Location2 = () => {
                 <img className={styles.backgroundImage} src={backgroundImg} alt="backgroundImg" />
                 <div className={styles.backgroundOverlay}></div>
 
-                <div className={styles.textBox}>
-                    <p className={styles.title}>챕터 2</p>
+                <div className={styles.title}>챕터 2</div>
 
-                    <div className={styles.textContainer}>
-                        {messages.slice(0, visibleCount).map((text, index) => (
-                            <div key={index} className={styles.textItem}>{text}</div>
-                        ))}
-                    </div>
+                <div className={styles.textContainer}>
+                    {messages.slice(0, visibleCount).map((text, index) => (
+                        <div key={index} className={styles.textItem}>{text}</div>
+                    ))}
                 </div>
 
                 {visibleCount === messages.length && (

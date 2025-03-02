@@ -1,80 +1,86 @@
 html,
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; // 불필요한 스크롤 제거
+
+    background-color: #fff2e9;
+    overflow: hidden;
 }
 
 .PageContainer {
-    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.contentsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: auto;
     height: 100vh;
-    background-color: #f3d8c559;
+    aspect-ratio: 5 / 7;
+}
 
-    .contentsContainer {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+.backgroundImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
 
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
+.backgroundOverlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-        width: auto;
-        height: 100%;
-        aspect-ratio: 11 / 16;
+    width: auto;
+    height: 100vh;
+    aspect-ratio: 5 / 7;
 
-        @media (max-width: 900px) {
-            width: 100%;
-            height: auto;
-        }
-
-        .backgroundImage {
-            width: 100%;
-            height: 100%;
-
-            z-index: -2;
-        }
-
-        .backgroundOverlay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #fff7e8d7;
-            z-index: -1;
-        }
-    }
+    background-color: #f8eee2db;
+    z-index: 1;
 }
 
 .textBox {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    gap: 2vh;
 
-    width: 80%;
+
+    width: 100%;
+    z-index: 10;
 
     .title {
+        margin: 7.5vh 0 0 0;
+        width: 100%;
         text-align: center;
-        font-family: 'ghanachoco';
-        font-size: 4vh;
-        margin-bottom: 2vh;
-        
-        @media (max-width: 900px) {
-            font-size: 6vw;
-        }
+
+        font-family: "ghanachoco";
+        font-size: 3.5vh;
+
+        z-index: 2;
     }
 
     .text {
         text-align: center;
-        line-height: 5vh;
         font-family: 'RIDIBatang';
         font-size: 2.5vh;
     }
@@ -96,14 +102,72 @@ body {
     border: none;
 
     cursor: pointer;
-    transition: all 0.2s;
 
-    @media (max-width: 900px) {
-        padding: 2vw 3vw;
-        border: 2.5px solid #5e410b67;
-    }
+    z-index: 2;
 
     &:hover {
         border: 2.5px solid #5e410b;
     }
+}
+
+@media (max-width: 900px) {
+    .PageContainer {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .contentsContainer {
+        width: 100vw;
+        height: auto;
+        aspect-ratio: 5 / 7;
+    }
+
+    .backgroundImage {
+        width: 100%;
+        height: auto;
+    }
+
+    .backgroundOverlay {
+        width: 100vw;
+        height: 142vw;
+    }
+
+    .textBox {
+        gap: 1vw;
+
+        .title {
+            margin: 9.5vw 0 0 0;
+            font-size: 5.5vw;
+        }
+
+        .text {
+            font-size: 4vw;
+        }
+    }
+
+    .captureButton {
+        bottom: 15%;
+
+        padding: 1.5vw 4vw;
+
+        border-radius: 1.4vw;
+        border: 2.5px solid #5e410b67;
+
+        font-size: 3.5vw;
+    }
+
+}
+
+@font-face {
+    font-family: 'ghanachoco';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RIDIBatang';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }

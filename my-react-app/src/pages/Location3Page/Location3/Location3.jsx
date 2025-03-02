@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Location3.module.scss";
-import backgroundImg from '../../assets/image/backgroundImage.jpg';
+import backgroundImg from '../../../assets/image/backgroundImage.jpg';
 
 const messages = [
     "이곳은 우리가 배우고, 성장하며, 독립을 꿈꾼 곳.",
