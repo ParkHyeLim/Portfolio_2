@@ -1,167 +1,160 @@
 html,
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; // 불필요한 스크롤 제거
+    background-color: #fff2e9;
 }
 
-// pc
-.Page1Container {
-    width: 100vw;
+.PageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.contentsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: auto;
     height: 100vh;
-    background-color: #f3d8c559;
+    aspect-ratio: 5 / 7;
+}
 
-    .contentsContainer {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+.backgroundImage {
+    position: absolute;
+    top: 50.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
+    height: 100%;
+}
 
-        width: auto;
-        height: 100%;
-        aspect-ratio: 11 / 16;
+.userBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 
-        .backgroundImage {
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+    margin: 0 0 10vh 0;
 
-        .userBox {
-            position: absolute;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
+    width: 100%;
+    z-index: 1;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+    .messageText {
+        background-color: #f3d8c59e;
 
-            font-family: 'RIDIBatang';
+        color: #FF0000;
+        font-family: "RIDIBatang";
+        font-size: 2vh;
+    }
 
-            .messageText {
-                padding: 0 0.2vh 0.3vh 0.2vh;
-                background-color: #fef0d7c3;
-                color: #FF0000;
-                font-size: 1.8vh;
-            }
+    input {
+        margin: 2vh 0 0 0;
+        padding: 1vh 2vh;
 
-            input {
-                margin: 3vh 0;
-                padding: 1.5vh 0;
-                width: 40vh;
+        width: 40vh;
 
-                border-radius: 1.2vh;
+        border: 1px solid #592f12;
+        border-radius: 1.2vh;
 
-                text-align: center;
-                font-size: 2vh;
-            }
+        text-align: center;
+        font-family: "RIDIBatang";
+        font-size: 2.2vh;
+    }
 
-            button {
-                padding: 1vh 0;
-                width: 20vh;
+    button {
+        margin: 5vh 0 0 0;
+        padding: 0.5vh 3vh;
 
-                background-color: #ffe8bd;
-                border-radius: 1.2vh;
+        background-color: #fce5d3;
+        border: 1px solid #592f12;
+        border-radius: 1.2vh;
 
-                font-family: 'ghanachoco';
-                font-size: 2vh;
-
-                &:hover {
-                    cursor: pointer;
-                    border: 2px solid #5e410b;
-                    font-weight: bold;
-                }
-            }
-
-        }
+        line-height: 4vh;
+        font-family: "ghanachoco";
+        font-size: 2.5vh;
     }
 }
 
-// 모바일
-.Page1Container_mo {
-    width: 100vw;
-    height: 100vh;
-    background-color: #f3d8c559;
+// 모바일 스타일
+@media (max-width: 900px) {
+    html,
+    body {
+        background-color: #fff2e9;
+    }
+    
+    .PageContainer {
+        width: 100vw;
+        height: 100vh;
+    }
 
     .contentsContainer {
-        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+
+        width: 100vw;
+        aspect-ratio: 5 / 7;
+        height: auto;
+    }
+
+    .backgroundImage {
+        position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
 
+        width: 100%;
+        height: auto;
+    }
+
+    .userBox {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
 
-        width: 100%;
-        height: auto;
-        aspect-ratio: 11 / 16;
+        margin: 0 0 10vw 0;
 
-        .backgroundImage {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        width: 100%;
+        z-index: 1;
+
+        .messageText {
+            background-color: #f3d8c59e;
+
+            color: #FF0000;
+            font-family: "RIDIBatang";
+            font-size: 4vw;
         }
 
-        .userBox {
-            position: absolute;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
+        input {
+            margin: 4vw 0 0 0;
+            padding: 2vw;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            width: 65vw;
 
-            font-family: 'RIDIBatang';
+            border: 1px solid #592f12;
+            border-radius: 2vw;
 
-            .messageText {
-                padding: 0 0.2vw 0.3vw 0.2vw;
-                background-color: #fef0d7c3;
-                color: #FF0000;
-                font-size: 4vw;
-            }
+            text-align: center;
+            font-family: "RIDIBatang";
+            font-size: 5vw;
+        }
 
-            input {
-                margin: 3.5vw 0 6vw 0;
-                padding: 3vw 0;
-                width: 80vw;
+        button {
+            margin: 6vw 0 0 0;
+            padding: 0.5vw 4vw;
 
-                border-radius: 1.2vh;
+            background-color: #fce5d3;
+            border: 1px solid #592f12;
+            border-radius: 2vw;
 
-                text-align: center;
-                font-size: 4vw;
-            }
-
-            button {
-                padding: 1vw 4vw;
-
-                background-color: #ffe8bd;
-                border-radius: 2vw;
-
-                font-family: 'ghanachoco';
-                font-size: 3.5vw;
-
-                &:hover {
-                    cursor: pointer;
-                    border: 2px solid #5e410b;
-                    font-weight: bold;
-                }
-            }
+            font-family: "ghanachoco";
+            font-size: 4.8vw;
         }
     }
 }
