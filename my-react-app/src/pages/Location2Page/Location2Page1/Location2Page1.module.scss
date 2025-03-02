@@ -170,6 +170,7 @@ body {
         top: 17%;
         left: 50%;
         transform: translate(-50%, -50%);
+        font-size: 5.5vw;
     }
 
     .quizBox {
@@ -180,7 +181,7 @@ body {
 
         .answer,
         .selectAnswer {
-            margin: 2vw 0 0 0;
+            margin: 3vw 0 0 0;
             font-size: 3vw;
         }
     }
