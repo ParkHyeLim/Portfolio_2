@@ -187,8 +187,15 @@ body {
     }
 
     .btnBox {
+        flex-direction: column;
         gap: 5vw;
         width: 100%;
+
+        .checkText{
+            background-color: #ffeed0dd;
+            color: #FF0000;
+            font-family: "RIDIBatang";
+        }
 
         button {
             padding: 2vw 4vw;
